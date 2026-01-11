@@ -22,65 +22,61 @@ function Index() {
       id: 1,
       title: 'Epic RPG Interface',
       category: 'Game UI',
-      image: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80',
-      tags: ['UI/UX', 'Fantasy', 'RPG'],
-      size: 'large'
+      image: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=1200&q=80'
     },
     {
       id: 2,
       title: 'Cyberpunk Banner Set',
       category: 'Banners',
-      image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80',
-      tags: ['Cyberpunk', 'Neon', 'Marketing'],
-      size: 'medium'
+      image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200&q=80'
     },
     {
       id: 3,
       title: 'Dragon Gaming Logo',
       category: 'Logo Design',
-      image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80',
-      tags: ['Branding', 'Mascot', 'Esports'],
-      size: 'medium'
+      image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200&q=80'
     },
     {
       id: 4,
       title: 'Sci-Fi HUD Design',
       category: 'Game UI',
-      image: 'https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=800&q=80',
-      tags: ['Sci-Fi', 'Interface', 'HUD'],
-      size: 'small'
+      image: 'https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=1200&q=80'
     },
     {
       id: 5,
       title: 'Esports Team Identity',
       category: 'Branding',
-      image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80',
-      tags: ['Esports', 'Logo', 'Brand'],
-      size: 'wide'
+      image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&q=80'
     },
     {
       id: 6,
       title: 'Fantasy Game Icons',
       category: 'Icon Pack',
-      image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&q=80',
-      tags: ['Icons', 'Fantasy', 'Items'],
-      size: 'small'
+      image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=1200&q=80'
     },
     {
       id: 7,
       title: 'Mobile Game UI Kit',
       category: 'UI Kit',
-      image: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80',
-      tags: ['Mobile', 'UI', 'Kit'],
-      size: 'medium'
+      image: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=1200&q=80'
     },
     {
       id: 8,
       title: 'Neon Battle Arena',
       category: 'Environment',
-      image: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&q=80',
-      tags: ['Environment', 'Arena', 'Neon'],
-      size: 'tall'
+      image: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=1200&q=80'
+    },
+    {
+      id: 9,
+      title: 'Medieval Quest UI',
+      category: 'Game UI',
+      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&q=80'
+    },
+    {
+      id: 10,
+      title: 'Streaming Overlay Pack',
+      category: 'Overlay',
+      image: 'https://images.unsplash.com/photo-1563089145-599997674d42?w=1200&q=80'
     }
   ];
 
@@ -185,52 +181,26 @@ function Index() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
-            {portfolioItems.map((item, index) => {
-              const sizeClasses = {
-                large: 'md:col-span-2 md:row-span-2',
-                wide: 'md:col-span-2',
-                tall: 'md:row-span-2',
-                medium: 'md:col-span-1',
-                small: 'md:col-span-1'
-              };
-              
-              return (
-                <Card
-                  key={item.id}
-                  className={`group relative overflow-hidden border-border/50 hover:border-primary/30 transition-all duration-500 cursor-pointer bg-card/30 backdrop-blur ${
-                    sizeClasses[item.size as keyof typeof sizeClasses]
-                  }`}
-                >
-                  <div className="absolute inset-0">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
-                  </div>
-                  
-                  <div className="absolute inset-0 p-6 flex flex-col justify-end translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                    <div className="flex gap-2 flex-wrap mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      {item.tags.map((tag) => (
-                        <span key={tag} className="text-xs px-2 py-1 bg-primary/20 border border-primary/30 rounded-full text-primary">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    <div className="text-xs text-primary font-semibold mb-1 uppercase tracking-wider">{item.category}</div>
-                    <h3 className="text-xl md:text-2xl font-bold text-white">{item.title}</h3>
-                  </div>
-
-                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-10 h-10 rounded-full bg-primary/20 backdrop-blur flex items-center justify-center border border-primary/30">
-                      <Icon name="ArrowUpRight" size={20} className="text-primary" />
-                    </div>
-                  </div>
-                </Card>
-              );
-            })}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {portfolioItems.map((item) => (
+              <div
+                key={item.id}
+                className="group relative overflow-hidden rounded-2xl cursor-pointer bg-card/50 border border-border/30 hover:border-primary/20 transition-all duration-500"
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                
+                <div className="p-6 bg-card/80 backdrop-blur-sm">
+                  <div className="text-xs text-muted-foreground mb-2 uppercase tracking-wider">{item.category}</div>
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">{item.title}</h3>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
