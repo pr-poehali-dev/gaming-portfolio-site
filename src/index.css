@@ -6,14 +6,14 @@
 
 @layer base {
   :root {
-    --background: 220 26% 14%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 22% 18%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 22% 18%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
 
     --primary: 258 90% 66%;
     --primary-foreground: 0 0% 100%;
@@ -21,8 +21,8 @@
     --secondary: 291 76% 60%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 18% 25%;
-    --muted-foreground: 220 9% 66%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
 
     --accent: 25 95% 63%;
     --accent-foreground: 0 0% 100%;
@@ -30,19 +30,19 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 18% 25%;
-    --input: 220 18% 25%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
     --ring: 258 90% 66%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
-    --sidebar-background: 220 26% 14%;
-    --sidebar-foreground: 0 0% 100%;
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 98%;
     --sidebar-primary: 258 90% 66%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 22% 18%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 220 18% 25%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
     --sidebar-ring: 258 90% 66%;
   }
 }
@@ -71,13 +71,26 @@
 @layer utilities {
   .glow-effect {
     box-shadow:
-      0 0 20px rgba(139, 92, 246, 0.5),
-      0 0 40px rgba(139, 92, 246, 0.3);
+      0 0 30px rgba(139, 92, 246, 0.4),
+      0 0 60px rgba(139, 92, 246, 0.2);
   }
 
   .glow-text {
     text-shadow:
-      0 0 10px rgba(139, 92, 246, 0.8),
-      0 0 20px rgba(139, 92, 246, 0.5);
+      0 0 15px rgba(139, 92, 246, 0.6),
+      0 0 30px rgba(139, 92, 246, 0.3);
+  }
+
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .bento-grid {
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 200px;
+    }
   }
 }

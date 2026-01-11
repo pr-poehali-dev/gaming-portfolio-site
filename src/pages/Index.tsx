@@ -23,42 +23,64 @@ function Index() {
       title: 'Epic RPG Interface',
       category: 'Game UI',
       image: 'https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=800&q=80',
-      tags: ['UI/UX', 'Fantasy', 'RPG']
+      tags: ['UI/UX', 'Fantasy', 'RPG'],
+      size: 'large'
     },
     {
       id: 2,
       title: 'Cyberpunk Banner Set',
       category: 'Banners',
       image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80',
-      tags: ['Cyberpunk', 'Neon', 'Marketing']
+      tags: ['Cyberpunk', 'Neon', 'Marketing'],
+      size: 'medium'
     },
     {
       id: 3,
       title: 'Dragon Gaming Logo',
       category: 'Logo Design',
       image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80',
-      tags: ['Branding', 'Mascot', 'Esports']
+      tags: ['Branding', 'Mascot', 'Esports'],
+      size: 'medium'
     },
     {
       id: 4,
       title: 'Sci-Fi HUD Design',
       category: 'Game UI',
       image: 'https://images.unsplash.com/photo-1560253023-3ec5d502959f?w=800&q=80',
-      tags: ['Sci-Fi', 'Interface', 'HUD']
+      tags: ['Sci-Fi', 'Interface', 'HUD'],
+      size: 'small'
     },
     {
       id: 5,
       title: 'Esports Team Identity',
       category: 'Branding',
       image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80',
-      tags: ['Esports', 'Logo', 'Brand']
+      tags: ['Esports', 'Logo', 'Brand'],
+      size: 'wide'
     },
     {
       id: 6,
       title: 'Fantasy Game Icons',
       category: 'Icon Pack',
       image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=800&q=80',
-      tags: ['Icons', 'Fantasy', 'Items']
+      tags: ['Icons', 'Fantasy', 'Items'],
+      size: 'small'
+    },
+    {
+      id: 7,
+      title: 'Mobile Game UI Kit',
+      category: 'UI Kit',
+      image: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80',
+      tags: ['Mobile', 'UI', 'Kit'],
+      size: 'medium'
+    },
+    {
+      id: 8,
+      title: 'Neon Battle Arena',
+      category: 'Environment',
+      image: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&q=80',
+      tags: ['Environment', 'Arena', 'Neon'],
+      size: 'tall'
     }
   ];
 
@@ -129,61 +151,86 @@ function Index() {
 
       <section
         id="home"
-        className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20"
+        className="min-h-screen relative overflow-hidden pt-24 pb-12"
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-secondary/20" />
-        <div className="absolute top-20 left-10 w-64 h-64 bg-primary/30 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background to-background" />
         
-        <div className={`container mx-auto px-4 text-center relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="inline-block mb-6 px-4 py-2 bg-primary/20 rounded-full border border-primary/50">
-            <span className="text-primary font-semibold">🎮 Gaming Design Experts</span>
-          </div>
-          
-          <h1 className="text-6xl md:text-8xl font-black mb-6 glow-text leading-tight">
-            Создаем Игровой<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">
-              Визуальный Опыт
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Дизайн студия, специализирующаяся на разработке UI/UX для игр, баннеров и логотипов
-          </p>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className={`mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <div className="inline-block mb-6 px-4 py-2 bg-primary/10 rounded-full border border-primary/30">
+              <span className="text-primary font-semibold text-sm">🎮 Gaming Design Studio</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-black mb-6 leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-accent">
+                Creative Works
+              </span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
+              Портфолио игрового дизайна: UI/UX, баннеры, логотипы и концепт-арты
+            </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="text-lg px-8 py-6 glow-effect"
-              onClick={() => scrollToSection('portfolio')}
-            >
-              <Icon name="Sparkles" className="mr-2" />
-              Смотреть Портфолио
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-6 border-primary/50 hover:bg-primary/10"
-              onClick={() => scrollToSection('services')}
-            >
-              <Icon name="Zap" className="mr-2" />
-              Наши Услуги
-            </Button>
+            <div className="flex flex-wrap gap-3 mb-8">
+              {['Все проекты', 'Game UI', 'Banners', 'Logos', 'Concepts'].map((filter) => (
+                <Button
+                  key={filter}
+                  variant={filter === 'Все проекты' ? 'default' : 'outline'}
+                  size="sm"
+                  className={filter === 'Все проекты' ? 'glow-effect' : 'border-border hover:border-primary/50'}
+                >
+                  {filter}
+                </Button>
+              ))}
+            </div>
           </div>
 
-          <div className="mt-20 grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="text-4xl font-black text-primary mb-2">250+</div>
-              <div className="text-sm text-muted-foreground">Проектов</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-black text-secondary mb-2">50+</div>
-              <div className="text-sm text-muted-foreground">Клиентов</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-black text-accent mb-2">5+</div>
-              <div className="text-sm text-muted-foreground">Лет опыта</div>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
+            {portfolioItems.map((item, index) => {
+              const sizeClasses = {
+                large: 'md:col-span-2 md:row-span-2',
+                wide: 'md:col-span-2',
+                tall: 'md:row-span-2',
+                medium: 'md:col-span-1',
+                small: 'md:col-span-1'
+              };
+              
+              return (
+                <Card
+                  key={item.id}
+                  className={`group relative overflow-hidden border-border/50 hover:border-primary/30 transition-all duration-500 cursor-pointer bg-card/30 backdrop-blur ${
+                    sizeClasses[item.size as keyof typeof sizeClasses]
+                  }`}
+                >
+                  <div className="absolute inset-0">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
+                  </div>
+                  
+                  <div className="absolute inset-0 p-6 flex flex-col justify-end translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="flex gap-2 flex-wrap mb-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {item.tags.map((tag) => (
+                        <span key={tag} className="text-xs px-2 py-1 bg-primary/20 border border-primary/30 rounded-full text-primary">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="text-xs text-primary font-semibold mb-1 uppercase tracking-wider">{item.category}</div>
+                    <h3 className="text-xl md:text-2xl font-bold text-white">{item.title}</h3>
+                  </div>
+
+                  <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 backdrop-blur flex items-center justify-center border border-primary/30">
+                      <Icon name="ArrowUpRight" size={20} className="text-primary" />
+                    </div>
+                  </div>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
